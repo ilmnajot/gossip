@@ -1,5 +1,6 @@
 package uz.ilmnajot.api_gossip.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 import uz.ilmnajot.api_gossip.enums.GeneralStatus;
@@ -36,6 +37,7 @@ public class ProfileEntity {
     private GeneralStatus status; //ACTIVE, BLOCK
 
     @Column(name = "created_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime createdDate;
 
 
